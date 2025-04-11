@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Bell, Search } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { ModeToggle } from "@/components/mode-toggle"
+import { useState } from "react";
+import { Bell, Search } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,12 +13,12 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Switch } from "@/components/ui/switch"
-import { SidebarTrigger } from "@/components/ui/sidebar"
+} from "@/components/ui/dropdown-menu";
+import { Switch } from "@/components/ui/switch";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export function TopNavbar() {
-  const [companyMode, setCompanyMode] = useState(false)
+  const [companyMode, setCompanyMode] = useState(false);
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -32,7 +32,11 @@ export function TopNavbar() {
       </div>
       <div className="relative ml-auto flex-1 md:grow-0 md:w-[240px] lg:w-[280px]">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-        <Input type="search" placeholder="Search..." className="w-full pl-8 md:w-[240px] lg:w-[280px]" />
+        <Input
+          type="search"
+          placeholder="Search..."
+          className="w-full pl-8 md:w-[240px] lg:w-[280px]"
+        />
       </div>
       <Button variant="ghost" size="icon" className="ml-auto md:ml-0">
         <Bell className="h-5 w-5" />
@@ -59,6 +63,5 @@ export function TopNavbar() {
       </DropdownMenu>
       <ModeToggle />
     </header>
-  )
+  );
 }
-

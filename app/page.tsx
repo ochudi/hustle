@@ -1,10 +1,16 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Progress } from "@/components/ui/progress"
-import { Download, ExternalLink, Plus } from "lucide-react"
-import { DashboardCharts } from "@/components/dashboard-charts"
-import { ApplicationStatus } from "@/components/application-status"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Progress } from "@/components/ui/progress";
+import { Download, ExternalLink, Plus } from "lucide-react";
+import { DashboardCharts } from "@/components/dashboard-charts";
+import { ApplicationStatus } from "@/components/application-status";
 
 export default function Dashboard() {
   const activeProjects = [
@@ -52,20 +58,22 @@ export default function Dashboard() {
       deliveryTime: "8 days 20 hours",
       progress: 20,
     },
-  ]
+  ];
 
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <h1 className="text-3xl font-bold tracking-tight">Welcome back, John!</h1>
+        <h1 className="text-3xl font-bold tracking-tight">
+          Welcome back, John!
+        </h1>
         <Button className="md:w-auto" variant="outline">
           <Download className="mr-2 h-4 w-4" />
           Download report
         </Button>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="col-span-2">
+      <div className="flex flex-col gap-4">
+        <Card className="">
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
               <CardTitle>Analytics</CardTitle>
@@ -97,7 +105,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="col-span-2">
+        <Card className="">
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
               <CardTitle>Earning reports</CardTitle>
@@ -111,7 +119,9 @@ export default function Dashboard() {
             <div className="mb-4">
               <div className="flex items-baseline gap-2">
                 <h3 className="text-3xl font-bold">$108.9k</h3>
-                <span className="text-sm font-medium text-green-500">+2.3%</span>
+                <span className="text-sm font-medium text-green-500">
+                  +2.3%
+                </span>
               </div>
             </div>
             <div className="h-[200px] w-full">
@@ -151,12 +161,21 @@ export default function Dashboard() {
                       <td className="py-3 pl-4">
                         <div className="flex items-center gap-3">
                           <Avatar className="h-8 w-8">
-                            <AvatarImage src={project.client.avatar} alt={project.client.name} />
-                            <AvatarFallback>{project.client.name.charAt(0)}</AvatarFallback>
+                            <AvatarImage
+                              src={project.client.avatar}
+                              alt={project.client.name}
+                            />
+                            <AvatarFallback>
+                              {project.client.name.charAt(0)}
+                            </AvatarFallback>
                           </Avatar>
                           <div>
-                            <div className="font-medium">{project.client.name}</div>
-                            <div className="text-xs text-muted-foreground">View order</div>
+                            <div className="font-medium">
+                              {project.client.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              View order
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -164,9 +183,14 @@ export default function Dashboard() {
                       <td className="py-3">{project.price}</td>
                       <td className="py-3">{project.deliveryTime}</td>
                       <td className="py-3 pr-4">
-                        <Progress value={project.progress} className="h-2 w-full" />
+                        <Progress
+                          value={project.progress}
+                          className="h-2 w-full"
+                        />
                       </td>
-                      <td className="py-3 pr-4 text-right">{project.progress}%</td>
+                      <td className="py-3 pr-4 text-right">
+                        {project.progress}%
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -185,6 +209,5 @@ export default function Dashboard() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
-
